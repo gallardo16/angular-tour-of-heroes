@@ -1,42 +1,27 @@
 import { Hero } from './hero';
 
-export module HeroAction {
-
-  /**
-   * 各クラスのtypeフィールドがActionの識別子
-   * constructorに宣言しているフィールドは、各Actionに関連するメタデータを持たせるためのもの
-   */
-  export const LOAD_HERO   = 'Load_Hero';
-  export const SELECT_HERO = 'Select_Hero';
-  export const ADD_HERO    = 'Add_Hero';
-  export const DELETE_HERO = 'Delete_Hero';
-  export const UPDATE_HERO = 'Update_Hero';
-
-  export class Load {
-    static readonly type = LOAD_HERO;
-  }
-
-  export class Select {
-    static readonly type = SELECT_HERO;
-
-    coustructor(public id: number) {}
-  }
-
+export namespace HeroAction {
   export class Add {
-    static readonly type = ADD_HERO;
-
-    coustructor(public payload: Hero) {}
+    static readonly type = '[Hero] Add';
+    constructor(public hero: Hero) {}
   }
 
   export class Delete {
-    static readonly type = Delete_HERO;
-
-    coustructor(public payload: Hero) {}
+    static readonly type = '[Hero] Delete';
+    constructor(public hero: Hero | number) {}
   }
 
   export class Update {
-    static readonly type = Update_HERO;
+    static readonly type = '[Hero] Update';
+    constructor(public hero: Hero) {}
+  }
 
-    coustructor(public payload: Hero) {}
+  export class Get {
+    static readonly type = '[Hero] Get';
+    constructor(public id: number) {}
+  }
+
+  export class GetAll {
+    static readonly type = '[Hero] GetAll';
   }
 }
