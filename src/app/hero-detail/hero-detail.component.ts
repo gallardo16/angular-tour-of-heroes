@@ -18,22 +18,19 @@ export class HeroDetailComponent implements OnInit {
   /** ngxs Selector **/
   @Select(HeroState.selectedHero) hero$: Observable<Hero> | undefined;
 
-  a$: Observable<Hero>;
-
   constructor(
     private route: ActivatedRoute,
     private location: Location,
     private store: Store
-  ) {
-    this.a$ = this.store.select(state => state.heroes.selectedHero);
-  }
+  ) { }
 
   ngOnInit(): void {
     this.getHero();
   }
 
   getHero(): void {
-    const id = +!this.route.snapshot.paramMap.get('id');
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+
     this.store.dispatch(new HeroAction.Get(id));
   }
 
