@@ -12,7 +12,6 @@ import { Hero }               from '../hero';
   styleUrls:   [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-
   /** ngxs Selector **/
   @Select(HeroState.heroes) heroes$: Observable<Hero[]> | undefined;
 

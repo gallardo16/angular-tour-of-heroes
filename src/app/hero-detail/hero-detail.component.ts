@@ -19,9 +19,9 @@ export class HeroDetailComponent implements OnInit {
   @Select(HeroState.selectedHero) hero$: Observable<Hero> | undefined;
 
   constructor(
-    private route: ActivatedRoute,
+    private route:    ActivatedRoute,
     private location: Location,
-    private store: Store
+    private store:    Store
   ) { }
 
   ngOnInit(): void {

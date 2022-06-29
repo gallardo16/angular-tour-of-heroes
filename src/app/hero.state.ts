@@ -17,9 +17,10 @@ export interface HeroStateModel {
     selectedHero: null,
   },
 })
+
 @Injectable()
 export class HeroState {
-  
+
   constructor(
     private heroService: HeroService
   ) {}
