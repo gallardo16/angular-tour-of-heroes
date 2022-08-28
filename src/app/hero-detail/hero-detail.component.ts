@@ -1,13 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute }           from '@angular/router';
-import { Location }                 from '@angular/common';
+import { Observable } from 'rxjs';
 
-import { Observable }               from 'rxjs';
-import { Store, Select }            from '@ngxs/store';
+import { Location } from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Select, Store } from '@ngxs/store';
 
-import { HeroAction }               from '../hero.actions';
-import { HeroState }                from '../hero.state';
-import { Hero }                     from '../hero';
+import { Hero } from '../hero';
+import { HeroAction } from '../hero.actions';
+import { HeroState } from '../hero.state';
 
 @Component({
   selector:    'app-hero-detail',
